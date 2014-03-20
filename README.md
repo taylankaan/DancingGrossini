@@ -2,19 +2,27 @@ DancingGrossini
 ===============
 
 Android Cocos2d Dancing Grossini Animated Sprite
-I suggest that use this code remove anything related with CCSprite arka;
-  CCLayer layer = CCColorLayer.node(new ccColor4B(255, 255, 0, 255));
-        addChild(layer, -7);
-       CCIntervalAction action = CCAnimate.action(animation);
+I suggest that use this code remove anything related with CCSprite arka.And instead of it use the code below.
+
+ CCLayer layer = CCColorLayer.node(new ccColor4B(255, 255, 0, 255));
+ 
+        addChild(layer,-7); 
+        
+        CCIntervalAction action = CCAnimate.action(animation);
+        
         grossini.runAction(action);
+        
         CCAction action2 = CCRepeatForever.action(
                 CCMoveBy.action(2, CGPoint.make(-0,200)));
+                
         grossini.runAction(action2);
-        
-       Its up to tou..instead of repeatForever you can just move the person its better..Also you can click and move.
-       With the another version of GameLayer above..It moves and animates every click you made..
+      
+       ------------------------------------------------------------------------------------------------------
+       Its up to tou..instead of CCRepeatForever you can just move the person its better..Also you can click and move,
+       with the another version of GameLayer above.It moves and animates every click you made.The code for this;
        
        ------------------------------------------------------------------------------------------------
+       
        CCSprite grossini;
     CCSprite arka;
     boolean touched;
@@ -53,7 +61,6 @@ I suggest that use this code remove anything related with CCSprite arka;
     public boolean ccTouchesBegan(MotionEvent event) {
   
    Istouched();
-  
    animate();
   
         CGPoint convertedLocation = CCDirector.sharedDirector()
